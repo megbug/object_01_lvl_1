@@ -14,7 +14,6 @@ let person = {
 // console.log(person.name, person.age);
 // person.sagNameAlter();
 
-
 // lvl_1_4
 let unsereHaustiere = [
     {
@@ -34,7 +33,6 @@ let unsereHaustiere = [
     ]
     }
 ];
-
 
 // console.log(unsereHaustiere[0].names[1]);
 // console.log(unsereHaustiere[1].names[2]);
@@ -140,35 +138,58 @@ console.log(myMusic[1].kunstler.slice(5, 10));
 */
 
 // lvl_1_7
-/*
+// /*
 myMusic.forEach(element => {
     let div = document.createElement('div');
-    let p = document.createElement('p')
-    let pKuenstler = document.createElement('p');
-    let pTitle = document.createElement('p');
-    let pFormat = document.createElement('p');
-    let pReleaseYear = document.createElement('p');
+    // let p = document.createElement('p')
+    // let pKuenstler = document.createElement('p');
+    // let pTitle = document.createElement('p');
+    // let pFormat = document.createElement('p');
+    // let pReleaseYear = document.createElement('p');
 
-    // pKuenstler.textContent = element.kunstler + element.title + element.formate
-    pKuenstler.textContent = element.kunstler
-    pTitle.textContent = element.title
-    pFormat.textContent = element.formate
+    // pKuenstler.textContent = element.kunstler
+    // pTitle.textContent = element.title
+    // pFormat.textContent = element.formate
 
     document.body.appendChild(div);
-    div.appendChild(p)
-    p.appendChild(pKuenstler)
-    p.appendChild(pTitle)
-    p.appendChild(pFormat)
+    // div.appendChild(p)
+    // p.appendChild(pKuenstler)
+    // p.appendChild(pTitle)
+    // p.appendChild(pFormat)
 
+    div.innerHTML = `<p>${element.kunstler}</p><p>${element.title}</p><p>${element.formate}</p><p>${element.release_jahr}</p>`
+
+    
     console.log(element.kunstler);
     console.log(element.title);
     console.log(element.formate);
-    if (element.release_jahr < 1975) {
-        pReleaseYear.textContent = element.release_jahr
-        div.appendChild(pReleaseYear)
+    // if (element.release_jahr < 1975) {
+    //     pReleaseYear.textContent = element.release_jahr
+    //     div.appendChild(pReleaseYear)
+    // }
+});
+// */
+
+
+// Alternative Lösung 2 Kurzfassung
+
+// myMusic.forEach(element => {
+//     let div = document.createElement('div');
+//     document.body.appendChild(div);
+//     div.innerHTML = `<p>${element.kunstler}</p><p>${element.title}</p><p>${element.formate}</p><p>${element.release_jahr}</p>`
+// })
+
+
+/*
+// Alternative Lösung 3 /Farid
+let result = document.getElementById("result");
+
+myMusic.forEach((music) => {
+    result.innerHTML += `${music.kunstler} <br> ${music.title} <br> ${music.formate}<br> <br>`;
+    if (music.release_jahr < 1975) {
+        result.innerHTML += `${music.release_jahr} <br> <br>`
     }
-}
-);
+})
 */
 
 // lvl_1_8
@@ -199,14 +220,14 @@ let studentData = [
 ];
 
 studentData.forEach(element => {
-    console.log(element.name);
-    console.log(element.coop);
-    console.log(element.emails);
+    // console.log(element.name);
+    // console.log(element.coop);
+    // console.log(element.emails);
 });
 
 let studentDataArr = studentData.map((element) => {
     return element.address.city
 })
 
-console.log(studentDataArr);
+// console.log(studentDataArr);
 
